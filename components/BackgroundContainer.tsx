@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image'
 
-const ImageContainer = styled.div`
-  background-image: url("/images/M3-Homepage-Desktop-LHD.jfif");
+const ImageContainer = styled.div<{src: string}>`
+  background-image: ${(props) => `url(${props.src})`};
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@ const ImageContainer = styled.div`
   height: 100vh;
 `;
 
-const ContainerWithBgImg = ({
+const BackgroundContainer = ({
   src,
   children
 }: {
@@ -19,10 +19,10 @@ const ContainerWithBgImg = ({
   children: JSX.Element | JSX.Element[];
 }) => {
   return (
-    <ImageContainer>
+    <ImageContainer src={src}>
       {children}
     </ImageContainer>
   );
 };
 
-export default ContainerWithBgImg;
+export default BackgroundContainer;
