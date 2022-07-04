@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <CustomHead title={'Tesla clone'}/>
       <BackgroundContainer src={'/images/M3-Homepage-Desktop-LHD.jfif'}>
-        <Header />
+        <Header isHome/>
       </BackgroundContainer>
     </>
   );
