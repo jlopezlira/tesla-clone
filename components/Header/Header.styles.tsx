@@ -11,7 +11,7 @@ export const Header = styled.div<{ isHome?: boolean }>`
 `;
 
 export const Link = styled.a`
-  font-weight: 600;
+  font-weight: 500;
   padding: 10px 15px;
   color: ${({ theme }) => theme.colors.grey10};
   font-size: 16px;

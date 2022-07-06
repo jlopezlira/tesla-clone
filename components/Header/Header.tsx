@@ -2,9 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import * as S from './Header.styles';
 import * as T from './Header.types';
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
 const NavCenterLinks: T.NavLink[] = [
-  { label: 'Model S', href: '/' },
+  { label: 'Model S', href: '/models' },
   { label: 'Model 3', href: '/' },
   { label: 'Model X', href: '/' },
   { label: 'Model Y', href: '/' },
@@ -44,18 +45,22 @@ const Header = ({ isHome }: { isHome?: boolean }) => {
       {isHome ? (
         <>
           <div>
-            {NavCenterLinks.map(link => (
-              <NavLink href={link.href}>{link.label}</NavLink>
+            {NavCenterLinks.map((link, idx) => (
+              <NavLink href={link.href} key={idx}>
+                {link.label}
+              </NavLink>
             ))}
           </div>
           <div>
-            {NavRightLinks.map(link => (
-              <NavLink href={link.href}>{link.label}</NavLink>
+            {NavRightLinks.map((link, idx) => (
+              <NavLink href={link.href} key={idx}>
+                {link.label}
+              </NavLink>
             ))}
           </div>
         </>
       ) : (
-        <p>Toggle Dark/Light</p>
+       <SettingsBrightnessIcon style={{cursor: 'pointer'}} />
       )}
     </S.Header>
   );
